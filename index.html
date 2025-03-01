@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vrum Vrum Motors</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Vrum Vrum Motors</h1>
+    <nav>
+      <button onclick="filtrarCarros('todos')">Todos</button>
+      <button onclick="filtrarCarros('sedan')">Sedans</button>
+      <button onclick="filtrarCarros('suv')">SUVs</button>
+      <button onclick="filtrarCarros('esportivo')">Esportivos</button>
+      <button onclick="filtrarCarrosPorMarca('bmw')">BMW</button>
+      <button onclick="filtrarCarrosPorMarca('porsche')">Porsche</button>
+      <button onclick="filtrarCarrosPorMarca('audi')">Audi</button>
+      <button onclick="filtrarCarrosPorMarca('toyota')">Toyota</button>
+      <button onclick="filtrarCarrosPorMarca('honda')">Honda</button>
+      <button onclick="filtrarCarrosPorMarca('ford')">Ford</button>
+      <button onclick="filtrarCarrosPorMarca('jeep')">Jeep</button>
+      <button onclick="filtrarCarrosPorMarca('chevrolet')">Chevrolet</button>
+      <button onclick="filtrarCarrosPorMarca('nissan')">Nissan</button>
+    </nav>
+  </header>
+
+  <section id="catalogo">
+    <!-- Seção de Detalhes (única) -->
+    <section id="detalhes">
+      <h2 id="detalhes-titulo"></h2>
+      <p id="detalhes-ano"></p>
+      <p id="detalhes-descricao"></p>
+      <p id="detalhes-vantagens"></p>
+      <button onclick="fecharDetalhes()">Voltar ao Catálogo</button>
+    </section>
+
+    <!-- Lista de carros -->
+    <div class="carro" data-tipo="sedan">
+      <img src="carro1.jpg" alt="Carro Sedan">
+      <h2>Carro Sedan</h2>
+      <p>Preço: R$ 120.000</p>
+      <button onclick="mostrarDetalhesCarro('Carro Sedan')">Detalhes</button>
+      <button onclick="agendarTestDrive('Carro Sedan')">Agendar Test Drive</button>
+    </div>
+
+    <div class="carro" data-tipo="suv">
+      <img src="carro2.jpg" alt="Carro SUV">
+      <h2>Carro SUV</h2>
+      <p>Preço: R$ 180.000</p>
+      <button onclick="mostrarDetalhesCarro('Carro SUV')">Detalhes</button>
+      <button onclick="agendarTestDrive('Carro SUV')">Agendar Test Drive</button>
+    </div>
+
+    <div class="carro" data-tipo="esportivo">
+      <img src="carro3.jpg" alt="Carro Esportivo">
+      <h2>Carro Esportivo</h2>
+      <p>Preço: R$ 250.000</p>
+      <button onclick="mostrarDetalhesCarro('Carro Esportivo')">Detalhes</button>
+      <button onclick="agendarTestDrive('Carro Esportivo')">Agendar Test Drive</button>
+    </div>
+
+    <!-- Toyota -->
+    <div class="carro" data-tipo="sedan">
+      <img src="toyota_corolla.jpg" alt="Toyota Corolla">
+      <h2>Toyota Corolla</h2>
+      <p>Preço: R$ 135.000</p>
+      <button onclick="mostrarDetalhesCarro('Toyota Corolla')">Detalhes</button>
+      <button onclick="agendarTestDrive('Toyota Corolla')">Agendar Test Drive</button>
+    </div>
+
+    <div class="carro" data-tipo="sedan">
+      <img src="toyota_camry.jpg" alt="Toyota Camry">
+      <h2>Toyota Camry</h2>
+      <p>Preço: R$ 155.000</p>
+      <button onclick="mostrarDetalhesCarro('Toyota Camry')">Detalhes</button>
+      <button onclick="agendarTestDrive('Toyota Camry')">Agendar Test Drive</button>
+    </div>
+
+    <!-- Honda -->
+    <div class="carro" data-tipo="suv">
+      <img src="honda_crv.jpg" alt="Honda CR-V">
+      <h2>Honda CR-V</h2>
+      <p>Preço: R$ 170.000</p>
+      <button onclick="mostrarDetalhesCarro('Honda CR-V')">Detalhes</button>
+      <button onclick="agendarTestDrive('Honda CR-V')">Agendar Test Drive</button>
+    </div>
+
+    <div class="carro" data-tipo="sedan">
+      <img src="honda_civic.jpg" alt="Honda Civic">
+      <h2>Honda Civic</h2>
+      <p>Preço: R$ 140.000</p>
+      <button onclick="mostrarDetalhesCarro('Honda Civic')">Detalhes</button>
+      <button onclick="agendarTestDrive('Honda Civic')">Agendar Test Drive</button>
+    </div>
+
+    <!-- Ford -->
+    <div class="carro" data-tipo="esportivo">
+      <img src="./img/FordMustang.png" alt="Ford Mustang">
+      <h2>Ford Mustang</h2>
+      <p>Preço: R$ 350.000</p>
+      <button onclick="mostrarDetalhesCarro('Ford Mustang')">Detalhes</button>
+      <button onclick="agendarTestDrive('Ford Mustang')">Agendar Test Drive</button>
+    </div>
+
+    <div class="carro" data-tipo="sedan">
+      <img src="ford_fusion.jpg" alt="Ford Fusion">
+      <h2>Ford Fusion</h2>
+      <p>Preço: R$ 160.000</p>
+      <button onclick="mostrarDetalhesCarro('Ford Fusion')">Detalhes</button>
+      <button onclick="agendarTestDrive('Ford Fusion')">Agendar Test Drive</button>
+    </div>
+
+    <!-- Jeep -->
+    <div class="carro" data-tipo="suv">
+      <img src="jeep_compass.jpg" alt="Jeep Compass">
+      <h2>Jeep Compass</h2>
+      <p>Preço: R$ 160.000</p>
+      <button onclick="mostrarDetalhesCarro('Jeep Compass')">Detalhes</button>
+      <button onclick="agendarTestDrive('Jeep Compass')">Agendar Test Drive</button>
+    </div>
+
+    <div class="carro" data-tipo="suv">
+      <img src="jeep_renegade.jpg" alt="Jeep Renegade">
+      <h2>Jeep Renegade</h2>
+      <p>Preço: R$ 145.000</p>
+      <button onclick="mostrarDetalhesCarro('Jeep Renegade')">Detalhes</button>
+      <button onclick="agendarTestDrive('Jeep Renegade')">Agendar Test Drive</button>
+    </div>
+
+    <!-- Chevrolet -->
+    <div class="carro" data-tipo="esportivo">
+      <img src="chevrolet_camaro.jpg" alt="Chevrolet Camaro">
+      <h2>Chevrolet Camaro</h2>
+      <p>Preço: R$ 330.000</p>
+      <button onclick="mostrarDetalhesCarro('Chevrolet Camaro')">Detalhes</button>
+      <button onclick="agendarTestDrive('Chevrolet Camaro')">Agendar Test Drive</button>
+    </div>
+
+    <div class="carro" data-tipo="sedan">
+      <img src="chevrolet_cruze.jpg" alt="Chevrolet Cruze">
+      <h2>Chevrolet Cruze</h2>
+      <p>Preço: R$ 125.000</p>
+      <button onclick="mostrarDetalhesCarro('Chevrolet Cruze')">Detalhes</button>
+      <button onclick="agendarTestDrive('Chevrolet Cruze')">Agendar Test Drive</button>
+    </div>
+
+    <!-- Audi -->
+    <div class="carro" data-tipo="sedan">
+      <img src="audi_a4.jpg" alt="Audi A4">
+      <h2>Audi A4</h2>
+      <p>Preço: R$ 240.000</p>
+      <button onclick="mostrarDetalhesCarro('Audi A4')">Detalhes</button>
+      <button onclick="agendarTestDrive('Audi A4')">Agendar Test Drive</button>
+    </div>
+
+    <!-- BMW -->
+    <div class="carro" data-tipo="sedan">
+      <img src="bmw_320i.jpg" alt="BMW 320i">
+      <h2>BMW 320i</h2>
+      <p>Preço: R$ 220.000</p>
+      <button onclick="mostrarDetalhesCarro('BMW 320i')">Detalhes</button>
+      <button onclick="agendarTestDrive('BMW 320i')">Agendar Test Drive</button>
+    </div>
+
+    <!-- Nissan -->
+    <div class="carro" data-tipo="suv">
+      <img src="nissan_xtrail.jpg" alt="Nissan X-Trail">
+      <h2>Nissan X-Trail</h2>
+      <p>Preço: R$ 190.000</p>
+      <button onclick="mostrarDetalhesCarro('Nissan X-Trail')">Detalhes</button>
+      <button onclick="agendarTestDrive('Nissan X-Trail')">Agendar Test Drive</button>
+    </div>
+
+    <div class="carro" data-tipo="sedan">
+      <img src="nissan_sentra.jpg" alt="Nissan Sentra">
+      <h2>Nissan Sentra</h2>
+      <p>Preço: R$ 130.000</p>
+      <button onclick="mostrarDetalhesCarro('Nissan Sentra')">Detalhes</button>
+      <button onclick="agendarTestDrive('Nissan Sentra')">Agendar Test Drive</button>
+    </div>
+
+    <!-- Porsche -->
+    <div class="carro" data-tipo="esportivo">
+      <img src="porsche_911.jpg" alt="Porsche 911">
+      <h2>Porsche 911</h2>
+      <p>Preço: R$ 950.000</p>
+      <button onclick="mostrarDetalhesCarro('Porsche 911')">Detalhes</button>
+      <button onclick="agendarTestDrive('Porsche 911')">Agendar Test Drive</button>
+    </div>
+  </section>
+
+  <section id="mapa">
+    <section id="agendamento">
+      <h2>Agendar Test Drive</h2>
+      <!-- Container para agrupar formulário e imagem -->
+      <div id="agendamento-container">
+        <div id="form-wrapper">
+          <form id="form-agendamento">
+            <label for="carro">Carro Selecionado:</label>
+            <input type="text" id="carro" readonly>
+            
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" required>
+    
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" required>
+    
+            <label for="telefone">Telefone:</label>
+            <input type="tel" id="telefone" required>
+    
+            <label for="data">Data preferencial:</label>
+            <input type="date" id="data" required>
+    
+            <button type="submit">Agendar Test Drive</button>
+          </form>
+        </div>
+        <div id="imagem-wrapper">
+          <img id="imagem-carro" src="" alt="Imagem do Carro" style="display:none;">
+        </div>
+      </div>
+    </section>
+    <h2>Nosso Endereço</h2>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5021484.474277526!2d138.17449657998807!3d-29.647099778956292!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12ae2c2b86f923%3A0xb90e13fd6bd3cc39!2sRiot%20Games%20Sydney!5e0!3m2!1spt-BR!2sbr!4v1740692936017!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Vrum Vrum Motors - Todos os direitos reservados.</p>
+  </footer>
+
+  <script defer src="script.js"></script>
+</body>
+</html>
